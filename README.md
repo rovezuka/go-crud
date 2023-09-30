@@ -1,89 +1,89 @@
 # JSON CRUD API in Go
 
-Этот проект представляет собой пример реализации операций CRUD (Create, Read, Update, Delete) на языке Go для работы с данными в базе данных PostgreSQL. 
+This project is an example of implementing CRUD (Create, Read, Update, Delete) operations in Go language to work with data in PostgreSQL database. 
 
 ## Структура проекта
-- `main.go`: Основной файл сервера.
-- `models/task.go`: Определение структуры задачи и функций для работы с базой данных.
-- `migrate/migrate.go`/: Шаблоны HTML для отображения задач.
-- `initializers/database.go`/: Статические файлы CSS и JavaScript.
-- `initializers/loadEnvVariables.go`/: Статические файлы CSS и JavaScript.
-- `controllers/postsController.go`/: Статические файлы CSS и JavaScript.
+- `main.go`: Server main file
+- `models/task.go`: Defining a model for the database
+- `migrate/migrate.go`/: Database migration
+- `initializers/database.go`/: Connecting to the database
+- `initializers/loadEnvVariables.go`/: Environment variables
+- `controllers/postsController.go`/: Realization of CRUD queries
 
 
-## Функциональность
+## Functionality
 
-+ Создание новых записей.
-+ Обновление существующих записей.
-+ Чтение данных из базы данных.
-+ Удаление записей из базы данных.-
++ Creating new records
++ Updating existing records
++ Reading data from the database
++ Deleting records from the database
 
-## Начало работы
+## Getting Started
 
-1. Убедитесь, что у вас установлен Go. Если нет, вы можете скачать его с [официального сайта](https://golang.org/dl/).
+1. Make sure you have Go installed. If not, you can download it from [official website](https://golang.org/dl/)
 
-2. Клонируйте репозиторий на свой компьютер:
+2. Clone the repository to your computer:
 ```
 git clone https://github.com/rovezuka/go-crud
 ```
 
-3. Установите необходимые зависимости:
+3. Install the required dependencies:
 
-Перейдите в корневую директорию проекта и выполните `go mod tidy`, чтобы установить все необходимые зависимости.
+Go to the root directory of the project and run ``go mod tidy`` to install all required dependencies
 
 
-4. Запустите приложение:
+4. Run the application:
 
-Выполните команду go run `main.go`, чтобы запустить проект на локальном сервере. По умолчанию проект будет доступен по адресу `http://localhost:8080``.
+Execute the command go run `main.go` to run the project on the local server. By default, the project will be available at `http://localhost:8080``
 
-## Использование
+## Usage
 
-1. Перейдите на главную страницу приложения.
+1. Navigate to the main page of the application
 
-2. Добавьте новую задачу, введя ее описание и нажав кнопку "Добавить".
+2. Add a new task by entering its description and clicking the "Add" button
 
-3. Отмечайте задачи как выполненные, нажав на соответствующую кнопку.
+3. Mark tasks as completed by pressing the corresponding button
 
-4. Удаляйте задачи, нажав на кнопку "Удалить".
+4. Delete tasks by clicking on the "Delete" button
 
-## Использование API
+## API Usage
 
-Проект предоставляет следующие маршруты для работы с данными:
+The project provides the following routes for working with data:
 
-- `POST /posts`: Создать новую запись. Отправьте JSON-запрос с данными записи.
-- `PUT /posts/:id`: Обновить существующую запись по идентификатору. Отправьте JSON-запрос с обновленными данными записи.
-- `GET /posts`: Получить список всех записей.
-- `GET /posts/:id`: Получить информацию о записи по идентификатору.
-- `DELETE /posts/:id`: Удалить запись по идентификатору.
+- `POST /posts`: Create a new record. Send a JSON request with the record data
+- `PUT /posts/:id`: Update an existing record by id. Send a JSON request with the updated record data
+- `GET /posts`: Get a list of all records
+- `GET /posts/:id`: Get record information by id
+- `DELETE /posts/:id`: Delete a record by identifier
 
-Для каждого запроса API ожидает JSON-объект с данными в теле запроса и возвращает JSON-ответ с результатом операции.
+For each request, the API expects a JSON object with data in the request body and returns a JSON response with the result of the operation.
 
-Пример запроса для создания новой записи с использованием Postman:
+Example of a request to create a new record using Postman:
 ```
 http://localhost:8080/posts
 
 {
-    "title": "Заголовок записи",
-    "content": "Содержание записи"
+    "title": "Record title",
+    "content": "Content of the record"
 }
 ```
-Пример ответа в Postman:
+Example of a response in Postman:
 ```
 {
     "id": 1,
-    "title": "Заголовок записи",
-    "content": "Содержание записи"
+    "title": "Record title",
+    "content": "Content of the record"
 }
 ```
 
-## Настройка базы данных
+## Configuring the database
 
-Проект использует базу данных PostgreSQL. Для настройки подключения к базе данных укажите соответствующие параметры в файле .env. Пример файла .env:
+The project uses PostgreSQL database. To customize the database connection, specify the appropriate parameters in the .env file. Example .env file:
 ```
 PORT=5432
 DB_URL="YOUR_URL"
 ```
 
-## Лицензия
+## License
 
-Этот проект распространяется под лицензией MIT. Подробности смотрите в файле `LICENSE`.
+This project is distributed under the MIT license. See the ``LICENSE`` file for details.

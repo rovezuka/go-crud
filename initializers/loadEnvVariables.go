@@ -6,7 +6,7 @@ import (
 	"github.com/joho/godotenv"
 )
 
-// Загрузка и получение переменных окружения
+// Loading and retrieving environment variables
 func LoadEnvVariables() {
 	err := godotenv.Load()
 	if err != nil {

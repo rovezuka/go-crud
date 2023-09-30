@@ -6,12 +6,12 @@ import (
 )
 
 func init() {
-	// Загружаем переменные окружения и подключаемся к базе данных
+	// Load environment variables and connect to the database
 	initializers.LoadEnvVariables()
 	initializers.ConnectToDB()
 }
 
 func main() {
-	// Миграция базы данных
+	// Database migration
 	initializers.DB.AutoMigrate(&models.Post{})
 }

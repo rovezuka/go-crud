@@ -12,7 +12,7 @@ func init() {
 }
 
 func main() {
-	// Запросы CRUD
+	// Requests CRUD
 	r := gin.Default()
 	r.POST("/posts", controllers.PostsCreate)
 	r.PUT("/posts/:id", controllers.PostsUpdate)

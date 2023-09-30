@@ -10,10 +10,10 @@ import (
 
 var DB *gorm.DB
 
-// Подключаемся к базе данных
+// Connecting to the database
 func ConnectToDB() {
 	var err error
-	// Переменная окружения DB_URL
+	// Environment variable DB_URL
 	dsn := os.Getenv("DB_URL")
 	DB, err = gorm.Open(postgres.Open(dsn), &gorm.Config{})
 
