@@ -2,10 +2,10 @@
 
 This project is an example of implementing CRUD (Create, Read, Update, Delete) operations in Go language to work with data in PostgreSQL database. 
 
-## Структура проекта
+## Project structure
 - `main.go`: Server main file
 - `models/task.go`: Defining a model for the database
-- `migrate/migrate.go`/: Database migration
+- `migrate/postModel.go`/: Database migration
 - `initializers/database.go`/: Connecting to the database
 - `initializers/loadEnvVariables.go`/: Environment variables
 - `controllers/postsController.go`/: Realization of CRUD queries
